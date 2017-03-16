@@ -1,6 +1,5 @@
 <template>
-    <div class="weui-skin_android" id="androidActionsheet" v-show="ldialog">
-      <div class="weui-mask" @click="mask"></div>
+    <div class="weui-skin_android" id="androidActionsheet">
       <div class="weui-actionsheet">
         <div class="weui-actionsheet__menu">
           <div class="weui-actionsheet__cell">切换账号</div>
@@ -14,18 +13,14 @@
 <script>
 export default {
   name: 'hello',
-  props:{
-    ldialog: true
-  },
+
   data () {
     return {
 
     }
   },
   methods:{
-    mask(){
-      this.ldialog = false
-    }
+
   },
 
 }

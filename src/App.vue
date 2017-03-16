@@ -18,7 +18,14 @@ export default {
       const vm = this
       const toDepth = to.path.split('/').length
       const fromDepth = from.path.split('/').length
-      let transitionName = toDepth > fromDepth ? 'bounce' : 'vbounce'
+      const toPage = to.path.split('/')[1].slice(0,4)
+      let transitionName =' '
+      if(toDepth !== fromDepth){
+        transitionName = toDepth > fromDepth ? 'bounce' : 'vbounce'
+      }
+      else{
+        transitionName = toDepth === fromDepth && toPage !== 'page' ? 'fade' : ''
+      }
       vm.$store.dispatch('setAnimate',transitionName)
     }
   }
@@ -37,5 +44,12 @@ export default {
 }
 .vbounce-leave-active {
   animation: slideOutRight .5s ease-out;
+}
+
+.fade-enter-active {
+  animation: fadeIn .5s ease-out;
+}
+.fade-leave-active {
+  animation: fadeOut .5s ease-out;
 }
 </style>

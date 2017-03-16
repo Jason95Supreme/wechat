@@ -1,16 +1,22 @@
 <template>
   <div class="page">
-
   </div>
 </template>
 
 <script>
+
 export default {
   name: 'hello',
   data () {
     return {
 
     }
+  },
+  mounted(){
+      const vm = this
+      setTimeout(function(){
+        vm.$router.push('/login')
+      },2000)
   }
 }
 </script>

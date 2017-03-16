@@ -17,6 +17,7 @@
       <p class="more" @click="more">更多</p>
     </div>
     <login-dialog v-show="ldialog"></login-dialog>
+    <div class="weui-mask" @click="mask" v-show="ldialog"></div>
   </div>
 </template>
 
@@ -58,7 +59,9 @@ export default {
     more(){
       this.ldialog = true
     },
-
+    mask(){
+      this.ldialog = false
+    }
   }
 }
 </script>
@@ -156,5 +159,8 @@ export default {
   bottom: 100px;
   left: 0;
   right: 0;
+}
+.content_input:after{
+  color: #51c332;
 }
 </style>

@@ -71,6 +71,10 @@ export default {
 <style scoped>
 .weui-tabbar{
   position: fixed;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 .weui-tabbar__item{
   padding: 0;

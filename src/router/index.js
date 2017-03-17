@@ -8,6 +8,9 @@ import pagecontact from '@/content-component/page-contact'
 import pagediscover from '@/content-component/page-discover'
 import pageme from '@/content-component/page-me'
 import booksomething from '@/content-components/book-something'
+import tenxun from '@/content-components/tenxun'
+import friendcircle from '@/content-components/friend-circle'
+import persondetail from '@/content-components/person-detail'
 
 Vue.use(Router)
 Vue.component('login-dialog',require('../plugin/dialog'))
@@ -22,7 +25,7 @@ export default new Router({
       component: login
     },
     {
-      path: '/wechat',
+      path: '/',
       name: 'wechat',
       component: wechat
     },
@@ -42,6 +45,11 @@ export default new Router({
       component: booksomething
     },
     {
+      path: '/pagewechat/tenxun',
+      name: 'tenxun',
+      component: tenxun
+    },
+    {
       path: '/pagecontact',
       name: 'pagecontact',
       component: pagecontact
@@ -52,9 +60,19 @@ export default new Router({
       component: pagediscover
     },
     {
+      path: '/pagediscover/friendcircle',
+      name: 'friendcircle',
+      component: friendcircle
+    },
+    {
       path: '/pageme',
       name: 'pageme',
       component: pageme
+    },
+    {
+      path: '/pageme/persondetail',
+      name: 'persondetail',
+      component: persondetail
     },
   ]
 })

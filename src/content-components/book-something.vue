@@ -4,7 +4,7 @@
       <router-link to='/pagewechat'>
         <i class="iconfont icon-fanhui"></i>
       </router-link>
-      <p>订阅号</p>
+      <p style="letter-spacing: 3px;">订阅号</p>
       <i class="iconfont icon-sou"></i>
     </div>
     <div class="book_content">
@@ -42,7 +42,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.book_page{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
 .book_content{
   position: fixed;
   width: 100%;
@@ -50,6 +54,10 @@ export default {
   overflow: auto;
   top: 50px;
   bottom: 0;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 .book_navbar{
   position: fixed;
@@ -58,6 +66,11 @@ export default {
   background-color: #2e3132;
   padding-left: 15px;
   z-index: 1;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 .book_navbar p{
   color: #fff;

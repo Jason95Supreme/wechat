@@ -4,7 +4,7 @@
     <div class="con_content">
 
       <div class="weui-cells">
-        <div class="weui-cell">
+        <router-link to='/pageme/persondetail' class="weui-cell">
           <div class="weui-cell__hd">
             <img src="../assets/1.jpg" class="img_po">
           </div>
@@ -13,7 +13,7 @@
               <p class="me_ps">微信号: xxyy322</p>
           </div>
           <div class="weui-cell__ft"><i class="iconfont icon-chuanchengshejiiconzitihua01"></i></div>
-        </div>
+        </router-link>
       </div>
 
       <div class="weui-cells">
@@ -101,7 +101,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.con_page{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
 .con_content{
   position: fixed;
   width: 100%;
@@ -110,6 +114,10 @@ export default {
   top: 50px;
   bottom: 57px;
   overflow: auto;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 .weui-cells{
   margin-bottom: 20px;
@@ -132,5 +140,8 @@ export default {
 }
 .icon-chuanchengshejiiconzitihua01{
   font-size: 25px;
+}
+.weui-cell__bd p:active{
+  color: #000;
 }
 </style>

@@ -12,7 +12,8 @@
         <i class="iconfont icon-close" @click="icon_close" v-show="icon"></i>
       </div>
 
-      <a  class="weui-btn weui-btn_primary" :class="{login_btn:isActive}">登录</a>
+      <a  class="weui-btn weui-btn_primary login_btn"  v-if="disable" >登录</a>
+      <router-link to='/pagewechat' class="weui-btn weui-btn_primary " v-else>登录</router-link>
       <p class="forget_pass" @click="forget">忘记密码</p>
       <p class="more" @click="more">更多</p>
     </div>
@@ -28,8 +29,8 @@ export default {
     return {
       input_pass:'',
       icon:false,
-      isActive:true,
       ldialog:false,
+      disable:true
     }
   },
   computed:{
@@ -40,11 +41,11 @@ export default {
 　　　this.icon = true
       if(this.input_pass !== ''){
         this.icon = true
-        this.isActive = false
+        this.disable = false
       }
       else{
         this.icon = false
-        this.isActive = true
+        this.disable = true
       }
     }
 　},
@@ -73,6 +74,16 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #fff;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.weui-mask{
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 .login_nav{
   width: 100%;
@@ -162,5 +173,9 @@ export default {
 }
 .content_input:after{
   color: #51c332;
+}
+.weui-btn_primary:not(.weui-btn_disabled):active{
+  color: #fff;
+  background-color: #51c332;
 }
 </style>

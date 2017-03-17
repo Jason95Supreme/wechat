@@ -4,7 +4,7 @@
     <div class="con_content">
 
       <div class="weui-cells">
-        <div class="weui-cell">
+        <router-link to='/pagediscover/friendcircle' class="weui-cell">
           <div class="weui-cell__hd">
             <img src="../assets/pyq.jpg" class="img">
           </div>
@@ -12,7 +12,7 @@
               <p>朋友圈</p>
           </div>
           <div class="weui-cell__ft"></div>
-        </div>
+        </router-link>
       </div>
 
       <div class="weui-cells">
@@ -88,7 +88,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.con_page{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
 .con_content{
   position: fixed;
   width: 100%;
@@ -96,11 +100,22 @@ export default {
   background-color: #ebebeb;
   top: 50px;
   bottom: 57px;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  overflow: auto;
 }
 .img{
   width: 30px;
   height: 30px;
   margin-right: 15px;
   margin-top: 10px;
+}
+.weui-cell__bd p:active{
+  color: #000;
+}
+.weui-cells{
+  margin-bottom: 20px;
 }
 </style>

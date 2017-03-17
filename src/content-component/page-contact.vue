@@ -146,7 +146,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.con_page{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
 .con_content{
   position: absolute;
   height: auto;
@@ -155,6 +159,10 @@ export default {
   overflow: auto;
   top: 50px;
   bottom: 57px;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 .weui-cells{
   margin-bottom: 20px;

@@ -29,6 +29,10 @@ export default {
   background-size: 100% 100%;
   width: 100%;
   height: 100%;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
 </style>

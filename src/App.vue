@@ -20,9 +20,11 @@ export default {
       const fromDepth = from.path.split('/').length
       const toPage = to.path.split('/')[1].slice(0,4)
       let transitionName =' '
+      //判断进入子页面执行下面动画
       if(toDepth !== fromDepth){
         transitionName = toDepth > fromDepth ? 'bounce' : 'vbounce'
       }
+      //判断进入同级页面执行下面动画
       else{
         transitionName = toDepth === fromDepth && toPage !== 'page' ? 'fade' : ''
       }
@@ -33,6 +35,7 @@ export default {
 </script>
 
 <style>
+
 .bounce-enter-active {
   animation: slideInRight .5s ease-out;
 }

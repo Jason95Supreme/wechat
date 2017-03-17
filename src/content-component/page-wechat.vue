@@ -13,7 +13,7 @@
           </div>
           <div class="weui-cell__ft">13:45</div>
         </router-link>
-        <div class="weui-cell">
+        <router-link to='/pagewechat/tenxun' class="weui-cell">
           <div class="weui-cell__hd">
             <img src="../assets/txxw.jpg" class="img">
           </div>
@@ -22,7 +22,7 @@
               <p class="we_ps">男子每天卖8000个馒头 月赚2万</p>
           </div>
           <div class="weui-cell__ft">2016年6月14日</div>
-        </div>
+        </router-link>
         <div class="weui-cell">
           <div class="weui-cell__hd">
             <img src="../assets/yhwy.jpg" class="img">
@@ -63,12 +63,20 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.con_page{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
 .con_content{
   position: fixed;
   width: 100%;
   height: 100%;
   top: 50px;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 .img{
   width: 60px;
@@ -96,4 +104,8 @@ export default {
 .weui-cell__ft{
   font-size: 14px;
 }
+.weui-cell__bd p:active{
+  color: #000;
+}
+
 </style>

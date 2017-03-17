@@ -72,12 +72,17 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #f0eff5;
+  max-width: 768px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 .for_nav{
   width: 100%;
   height: 50px;
   background-color: #2e3132;
   padding-left: 15px;
+  box-sizing: border-box;
 }
 .for_nav p{
   color: #fff;
@@ -100,7 +105,7 @@ export default {
   width: 1px;
   height: 25px;
   left: 35px;
-  background-color: #555;
+  background-color: #111;
 }
 .icon-shouji,
 .icon-qq,

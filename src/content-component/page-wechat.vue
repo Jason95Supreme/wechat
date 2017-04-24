@@ -107,5 +107,7 @@ export default {
 .weui-cell__bd p:active{
   color: #000;
 }
-
+a:visited{
+  color: #000;
+}
 </style>

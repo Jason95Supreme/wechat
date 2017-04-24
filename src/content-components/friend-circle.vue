@@ -5,7 +5,7 @@
         <i class="iconfont icon-fanhui"></i>
       </router-link>
       <p style="letter-spacing: 3px;">朋友圈</p>
-      <i class="iconfont icon-camera"></i>
+      <i class="iconfont icon-camera" @click="camera = !camera"></i>
     </div>
     <div class="fri_content">
       <div class="con_backpic"></div>
@@ -15,19 +15,6 @@
           <div class="por_back">
             <div class="por_pic"></div>
           </div>
-        </div>
-
-        <div class="con_tip">
-          <div class="tip_back">
-            <div class="tip_pic"></div>
-          </div>
-          <span class="name">青蚨儿</span>
-          <div class="tip_content">
-            <div class="tip_con_pic"></div>
-            <p>有一种普罗旺斯叫阿维尼翁</p>
-          </div>
-          <span class="time">3小时前</span>
-          <i class="iconfont icon-bd_huifu"></i>
         </div>
 
         <div class="con_tips" v-for="i in item">
@@ -40,11 +27,26 @@
             <p>有一种普罗旺斯叫阿维尼翁</p>
           </div>
           <span class="time">3小时前</span>
-          <i class="iconfont icon-bd_huifu"></i>
+          <i class="iconfont icon-bd_huifu" @click="ac = !ac"></i>
+          <transition name="interactive">
+            <div class="i-active" v-show="ac">
+              <div class="zan"><i class="iconfont icon-zan"></i>赞</div>
+              <div class="comment"><i class="iconfont icon-pinglun"></i>评论</div>
+            </div>
+          </transition>
         </div>
-
       </div>
     </div>
+    <transition name="mask">
+      <div class="ca-mask" v-show="camera" @click="camera = !camera"></div>
+    </transition>
+      <div class="ma-box" v-show="camera">
+        <div class="shot">拍摄<span>照片或视频</span></div>
+        <div class="choose">从相册选择</div>
+      </div>
+
+
+
   </div>
 </template>
 
@@ -54,8 +56,13 @@ export default {
   name: 'hello',
   data () {
     return {
-      item:3,
+      item:4,
+      ac:false,
+      camera:false
     }
+  },
+  methods:{
+
   },
   mounted(){
 
@@ -137,9 +144,8 @@ export default {
 .con_content{
   position: absolute;
   width: 100%;
-  height: auto;
-  min-height: calc(100% - 300px);
   top: 300px;
+  padding-top: 50px;
 }
 .portrait{
   position: absolute;
@@ -195,8 +201,6 @@ export default {
   position: relative;
   width: 100%;
   min-height: 150px;
-  z-index: -1;
-  margin-bottom: 10px;
 }
 .con_tips:after{
   content: '';
@@ -259,7 +263,7 @@ export default {
 }
 .time{
   position: absolute;
-  width: 100px;
+  width: 55px;
   color: #888;
   bottom: 15px;
   left: 80px;
@@ -271,5 +275,97 @@ export default {
   position: absolute;
   bottom: 0;
   right: 15px;
+}
+.i-active{
+  width: 155px;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+  right: 55px;
+  background-color: #2E3132;
+  display: table;
+  border-radius: 3px;
+}
+.zan,
+.comment{
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  color: #fff;
+  font-size: 14px;
+  width: 50%;
+}
+.zan:after{
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 25px;
+  background-color: #fff;
+  top: 10px;
+  left: 75px;
+}
+.icon-zan,
+.icon-pinglun{
+  font-size: 20px;
+  margin-right: 8px;
+}
+.icon-pinglun{
+  position: relative;
+  top: 3px;
+}
+.interactive-enter-active, .interactive-leave-active {
+  transition: all .5s
+}
+.interactive-enter, .interactive-leave-to {
+  transform: translateX(30%);
+  opacity: 0;
+}
+.ca-mask{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0,0,0,0.5);
+  /*z-index: 2;*/
+}
+.ma-box{
+  width: 90%;
+  height: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  background-color: #fff;
+  /*z-index: 3;*/
+}
+.shot,
+.choose{
+  height: 50%;
+  line-height: 50px;
+  padding-left: 15px;
+}
+.shot span{
+  line-height: 50px;
+  color: #888;
+  position: absolute;
+  font-size: 14px;
+  right: 15px;
+}
+.shot:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: #eee;
+  top: 50px;
+}
+.mask-enter-active,.mask-leave-active{
+  transition: opacity .2s;
+}
+.mask-enter,.mask-leave-to{
+  opacity: 0;
 }
 </style>

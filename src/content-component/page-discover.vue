@@ -118,4 +118,7 @@ export default {
 .weui-cells{
   margin-bottom: 20px;
 }
+a:visited{
+  color: #000;
+}
 </style>

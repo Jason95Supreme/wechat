@@ -101,6 +101,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+a:visited{
+  color: #000;
+}
 .con_page{
   position: fixed;
   width: 100%;

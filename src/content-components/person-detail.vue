@@ -149,6 +149,9 @@ export default {
   width: 65px;
   height: 65px;
 }
+.weui-cell__bd p{
+  width: 90px;
+}
 .weui-cell__ft{
   font-size: 14px;
   width: 290px;
